@@ -8,3 +8,11 @@ CREATE TABLE gov.`init_data` (
   `create_time` datetime NOT NULL DEFAULT '1980-03-10 00:00:00' COMMENT '请求时间',
   PRIMARY KEY (`id`)
 )ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COMMENT='gov抓取数据基本表';
+
+CREATE TABLE gov.`deal_data` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '自增ID',
+  `url` varchar(128) NOT NULL DEFAULT '' COMMENT 'url',
+  `content` LONGTEXT COMMENT 'content',
+  `deal_content` LONGTEXT COMMENT 'deal_content',
+  PRIMARY KEY (`id`)
+)ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COMMENT='gov抓取数据基本表';

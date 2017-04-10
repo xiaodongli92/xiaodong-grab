@@ -28,6 +28,6 @@
         <appender-ref ref="CONSOLE"/>
         <appender-ref ref="fileAppender"/>
     </logger>
-    <!--<include resource="org/springframework/boot/logging/logback/base.xml"/>-->
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
     <jmxConfigurator/>
 </configuration>

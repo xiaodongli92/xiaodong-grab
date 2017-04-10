@@ -1,5 +1,6 @@
 package com.xiaodong.gov.grab;
 
+import com.xiaodong.gov.grab.service.DealDataService;
 import com.xiaodong.gov.grab.service.InitDataService;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -22,6 +23,16 @@ public class Application {
 
     @Autowired
     private InitDataService initDataService;
+
+    @Autowired
+    private DealDataService dealDataService;
+
+    @RequestMapping("/deal")
+    @ResponseBody
+    public String deal() {
+        dealDataService.deal();
+        return "ok";
+    }
 
     @RequestMapping("/run")
     @ResponseBody
