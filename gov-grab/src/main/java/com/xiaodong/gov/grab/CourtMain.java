@@ -28,7 +28,7 @@ public class CourtMain {
 
     public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException {
 //        request();
-//        detail("f8d4aacb-fc18-4c92-b498-659575887634", "0", "0");
+        detail("fa050ae7-6747-4aec-8c29-786ce43a3f0d", "0", "0");
     }
 
     public static List<InitData> request(String key, String index, String page) throws IOException,
@@ -60,7 +60,7 @@ public class CourtMain {
         }
         String url = "http://wenshu.court.gov.cn/CreateContentJS/CreateContentJS.aspx?DocID=" + id;
         String result = HttpUtil.get(url);
-        LOG.info("id={}---url={}---result={}", id, url, result);
+        LOG.info("id={}---url={}  ---result={}", id, url, result);
         if (StringUtils.isBlank(result)) {
             return null;
         }
@@ -79,6 +79,7 @@ public class CourtMain {
         }
         content = content.substring(content.indexOf("\"{"), content.length() - 2);
         content = content.substring(1, content.length()).replaceAll("\\\\\"", "\"").replaceAll("\\\\", "");
+        System.out.println(content);
         JSONObject jsonObject = JSON.parseObject(content);
         String html = jsonObject.getString("Html");
         Document document = Jsoup.parse(html);

@@ -21,8 +21,8 @@ public class InitDataService {
     private InitDataRepository initDataRepository;
 
     public void executeInitData(String key) throws ParserConfigurationException, SAXException, IOException {
-        for (int i=15; i<=50; i++) {
-            List<InitData> list = CourtMain.request(key, String.valueOf(i), "20");
+        for (int i=101; i<=1000; i++) {
+            List<InitData> list = CourtMain.request(key, String.valueOf(i), "5");
             initDataRepository.save(list);
         }
     }
