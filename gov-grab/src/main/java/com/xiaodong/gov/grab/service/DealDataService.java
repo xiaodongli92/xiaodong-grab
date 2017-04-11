@@ -50,6 +50,9 @@ public class DealDataService {
                         .replaceAll("被告人", "")
                         .replaceAll("罪犯", "")
                         ;
+                if (name.length() > 4) {
+                    continue;
+                }
                 builder.append(name).append(",");
             }
         }
